@@ -1,0 +1,92 @@
+:root {
+  --primary: #596b2f;
+  --primary-dark: #3f4d21;
+  --accent: #e8b92f;
+  --mint: #fff4c7;
+  --paper: #fffdf7;
+  --muted: #707763;
+  --canvas: #f7f8f1;
+  --line: #dfe3d4;
+}
+
+body, #container { background: #f6f7f4; }
+#header { background: var(--primary); color: #fff; padding: 14px 28px; }
+#branding h1 { display: none; }
+.brand-lockup { display: flex; align-items: center; gap: 12px; }
+.brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50% 50% 50% 4px; background: var(--accent); color: #fff; font-size: 24px; font-weight: 700; }
+.brand-lockup strong { display: block; color: #fff; font-size: 16px; letter-spacing: -.04em; }
+.brand-lockup strong span { color: var(--accent); }
+.brand-lockup small { display: block; margin-top: 3px; color: #9aabb2; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+#user-tools { padding-top: 4px; color: #b9c4c8; }
+#user-tools a { color: var(--mint); }
+.welcome-message { color: #b9c4c8; }
+#content { max-width: 1440px; margin: 0 auto; padding: 32px 36px; }
+#content h1 { color: var(--primary); font-size: 28px; font-weight: 600; letter-spacing: -.03em; }
+.module, .submit-row, .inline-group, fieldset { border: 1px solid #dce1dc; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 24px rgba(7,19,31,.04); }
+.module h2, .module caption, .inline-group h2 { background: var(--primary); color: #fff; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+.module h2 a, .module caption a { color: var(--mint); }
+table thead th { background: #e6ece8; color: var(--primary); }
+tr:nth-child(even) { background: #fbfcfa; }
+tr:hover { background: #eef8f4 !important; }
+td, th { padding: 12px 14px !important; }
+a:link, a:visited { color: #176d72; }
+a:hover { color: var(--accent); }
+.button, input[type=submit], input[type=button], .submit-row input, a.button { border-radius: 5px; background: var(--accent); border: 0; padding: 10px 16px; color: #fff; font-weight: 600; }
+.button.default, input[type=submit].default { background: var(--primary); }
+input, textarea, select { border: 1px solid #cbd4ce; border-radius: 5px; padding: 9px 10px; }
+input:focus, textarea:focus, select:focus { border-color: var(--mint); box-shadow: 0 0 0 2px rgba(114,226,210,.25); outline: 0; }
+.object-tools a { border-radius: 5px; background: var(--accent); }
+#changelist-filter { border-left: 1px solid #dce1dc; background: #fff; }
+#changelist-filter h2 { background: var(--primary); }
+.messagelist li { border-radius: 6px; }
+/* White, yellow, and olive admin theme refinements. */
+body, #container { background: var(--canvas); color: #29301e; }
+#header { background: var(--primary); box-shadow: 0 2px 0 rgba(63, 77, 33, .16); }
+.brand-mark { background: var(--accent); color: var(--primary-dark); }
+.brand-lockup strong span { color: var(--accent); }
+.brand-lockup small, #user-tools, .welcome-message { color: #e5e9d7; }
+#user-tools a { color: var(--accent); }
+#content { padding: 36px; }
+#content h1 { color: var(--primary-dark); }
+.module, .submit-row, .inline-group, fieldset { border-color: var(--line); background: var(--paper); box-shadow: 0 8px 24px rgba(63, 77, 33, .06); }
+.module h2, .module caption, .inline-group h2, #changelist-filter h2 { background: var(--primary); }
+.module h2 a, .module caption a { color: var(--accent); }
+table thead th { background: #edf0e2; color: var(--primary-dark); }
+tr:nth-child(even) { background: #fffefb; }
+tr:hover { background: var(--mint) !important; }
+a:link, a:visited { color: var(--primary); }
+a:hover { color: var(--primary-dark); }
+.button, input[type=submit], input[type=button], .submit-row input, a.button, .object-tools a { background: var(--accent); color: var(--primary-dark); font-weight: 700; }
+.button.default, input[type=submit].default { background: var(--primary); color: #fff; }
+input, textarea, select { border-color: #cbd3bd; background: #fffefb; }
+input:focus, textarea:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(89, 107, 47, .2); }
+#changelist-filter { border-left-color: var(--line); background: var(--paper); }
+#changelist-filter li.selected a { color: var(--primary-dark); font-weight: 700; }
+.breadcrumbs { background: #eef1e5; color: var(--muted); }
+@media (max-width: 700px) { #content { padding: 20px 14px; } #header { padding: 12px 16px; } #user-tools { margin-top: 12px; } }
+
+/* Light mode: black text with soft olive and yellow accents. */
+body, #container { background: #ffffff; color: #000000; }
+#header { background: #ffffff; border-bottom: 2px solid var(--primary); box-shadow: none; }
+.brand-mark { background: var(--accent); color: #000000; }
+.brand-lockup strong, .brand-lockup strong span { color: #000000; }
+.brand-lockup small, #user-tools, .welcome-message { color: #000000; }
+#user-tools a { color: #000000; text-decoration: underline; text-decoration-color: var(--accent); }
+#content { background: #ffffff; }
+#content h1 { color: #000000; }
+.module, .submit-row, .inline-group, fieldset { background: #ffffff; color: #000000; border-color: #d8ddc8; box-shadow: 0 6px 18px rgba(63, 77, 33, .05); }
+.module h2, .module caption, .inline-group h2, #changelist-filter h2 { background: #eef1e5; color: #000000; border-bottom: 1px solid #d8ddc8; }
+.module h2 a, .module caption a { color: #000000; }
+table thead th { background: #fff4c7; color: #000000; }
+tr:nth-child(even) { background: #fffefb; }
+tr:hover { background: #fff8dc !important; }
+td, th, label, p, li, .help, .quiet { color: #000000; }
+a:link, a:visited, a:hover { color: #000000; }
+.button, input[type=submit], input[type=button], .submit-row input, a.button, .object-tools a { background: #f1c83b; color: #000000; border: 1px solid #d3a718; }
+.button.default, input[type=submit].default { background: #e8edda; color: #000000; border-color: var(--primary); }
+input, textarea, select { color: #000000; border-color: #cfd5bc; background: #ffffff; }
+input::placeholder, textarea::placeholder { color: #4d4d4d; }
+input:focus, textarea:focus, select:focus { color: #000000; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(89, 107, 47, .18); }
+#changelist-filter { border-left-color: #d8ddc8; background: #ffffff; }
+#changelist-filter li.selected a { color: #000000; font-weight: 700; }
+.breadcrumbs { background: #f7f8f1; color: #000000; }

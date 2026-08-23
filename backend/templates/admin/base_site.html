@@ -1,0 +1,23 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | sidhivinayaksoftwork CMS{% endblock %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'admin/css/custom_admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+  <div class="brand-lockup">
+    <span class="brand-mark">s</span>
+    <div>
+      <strong>sidhivinayak<span>softwork</span></strong>
+      <small>Content management system</small>
+    </div>
+  </div>
+{% endblock %}
+
+{% block welcome-msg %}
+  <span class="welcome-message">Welcome, <strong>{% firstof user.get_short_name user.get_username %}</strong>.</span>
+{% endblock %}
