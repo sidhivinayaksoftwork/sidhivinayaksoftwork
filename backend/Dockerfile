@@ -4,5 +4,5 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-RUN python manage.py makemigrations content && python manage.py migrate && python manage.py ensure_superuser && python manage.py collectstatic --noinput
-CMD ["sh", "-c", "gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000}"]
+RUN python manage.py makemigrations content && python manage.py migrate && python manage.py collectstatic --noinput
+CMD ["sh", "-c", "python manage.py migrate && python manage.py ensure_superuser && gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000}"]
