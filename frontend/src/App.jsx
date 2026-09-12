@@ -4,9 +4,10 @@ import { ArrowUpRight, Menu, X, ArrowRight, Sparkles, Plus } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { services, projects, posts, technologies } from './data'
 import { api, getCollection } from './api'
+import companyLogo from '../../assets/logo.png'
 
 const fade = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: .6 } } }
-function Logo() { return <Link to="/" className="logo"><span className="logo-mark">s</span><span>sidhivinayak<br/><i>softwork</i></span></Link> }
+function Logo() { return <Link to="/" className="logo" aria-label="Sidhivinayak Softwork home"><img src={companyLogo} alt="" className="logo-mark"/><span className="logo-wordmark">SIDHIVINAYAK<br/><i>SOFTWARE</i></span></Link> }
 function Nav() { const [open, setOpen] = useState(false); return <header className="nav"><Logo/><nav className={open ? 'nav-links open' : 'nav-links'}>{[['/services','Services'],['/work','Our work'],['/about','About'],['/insights','Insights']].map(([to,label]) => <NavLink key={to} to={to} onClick={() => setOpen(false)}>{label}</NavLink>)}<Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>Start a conversation <ArrowUpRight size={16}/></Link></nav><button className="menu" aria-label="Toggle menu" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button></header> }
 function Footer() { return <footer><div className="footer-top"><div><Logo/><p className="footer-note">Digital products with intent.<br/>Based in India. Building for everywhere.</p></div><div className="footer-links"><div><span>Explore</span><Link to="/services">Services</Link><Link to="/work">Our work</Link><Link to="/about">About us</Link><Link to="/insights">Insights</Link></div><div><span>Say hello</span><a href="mailto:sidhivinayaksoftwork@gmail.com">sidhivinayaksoftwork@gmail.com</a><a href="tel:+919755550213">+91 9755550213</a><Link to="/contact">Start a project ↗</Link></div></div></div><div className="footer-bottom"><span>© 2026 sidhivinayaksoftwork</span><span>Made with care & curiosity</span></div></footer> }
 function Layout({ children }) { return <><Nav/><main>{children}</main><Footer/></> }
